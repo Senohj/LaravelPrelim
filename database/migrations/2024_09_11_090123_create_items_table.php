@@ -9,12 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->string('item_name');
-            $table->string('price');
+            $table->decimal('price', 8, 2);
+            $table->timestamps();
         });
     }
 };
